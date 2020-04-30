@@ -1,4 +1,4 @@
-// Copyright 2018 Your Name <your_email>
+// Copyright [year] <Copyright Owner>
 
 #include <gtest/gtest.h>
 
