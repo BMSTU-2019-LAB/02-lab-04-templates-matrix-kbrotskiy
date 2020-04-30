@@ -11,7 +11,7 @@
 template <class T>
 class Matrix
 {
-private: 
+private:
 T **matr;
 int rows, cols;
 public:
@@ -23,7 +23,7 @@ Matrix(const Matrix& copy);
 Matrix& operator=(const Matrix<T>& rhs);
 Matrix<T> operator+(Matrix<T>& m2);
 Matrix operator -(Matrix &m2);
-Matrix operator *(Matrix &m2); 
+Matrix operator *(Matrix &m2);
 double det(Matrix m);
 Matrix deleterows_cols(Matrix m, int nrows, int ncols);
 Matrix Inversion();
