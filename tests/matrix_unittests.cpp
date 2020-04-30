@@ -1,5 +1,3 @@
-// Copyright 2018 Your Name <your_email>
-
 #include <gtest/gtest.h>
 
 #include <matrix.hpp>
@@ -46,7 +44,7 @@ TEST(Matrix, Add) {
     EXPECT_EQ(s2, s);
 
     ASSERT_EQ(s.get_rows(), 2);
-    ASSERT_EQ(s.get_columns(), 3);
+    ASSERT_EQ(s.get_cols(), 3);
     EXPECT_EQ(s[0][0], 2);
     EXPECT_EQ(s[0][1], 4);
     EXPECT_EQ(s[1][0], 6);
@@ -63,7 +61,7 @@ TEST(Matrix, AddEmpty) {
     Matrix<float> s = m + c;
 
     EXPECT_EQ(s.get_rows(), 0);
-    EXPECT_EQ(s.get_columns(), 0);
+    EXPECT_EQ(s.get_cols(), 0);
 }
 
 TEST(Matrix, Sub) {
@@ -77,7 +75,7 @@ TEST(Matrix, Sub) {
     auto s = m - c;
 
     ASSERT_EQ(s.get_rows(), 2);
-    ASSERT_EQ(s.get_columns(), 2);
+    ASSERT_EQ(s.get_cols(), 2);
     EXPECT_EQ(s[0][0], 0);
     EXPECT_EQ(s[0][1], 0);
     EXPECT_EQ(s[1][0], 0);
@@ -92,7 +90,7 @@ TEST(Matrix, SubEmpty) {
     auto s = m - c;
 
     EXPECT_EQ(s.get_rows(), 0);
-    EXPECT_EQ(s.get_columns(), 0);
+    EXPECT_EQ(s.get_cols(), 0);
 }
 
 TEST(Matrix, Mult) {
@@ -124,7 +122,7 @@ TEST(Matrix, Mult) {
     auto s = m * c;
 
     ASSERT_EQ(s.get_rows(), 3);
-    ASSERT_EQ(s.get_columns(), 2);
+    ASSERT_EQ(s.get_cols(), 2);
     /*
     2 0
     2 2
@@ -139,25 +137,25 @@ TEST(Matrix, Mult) {
 
     auto e = c * m;
     ASSERT_EQ(0, e.get_rows());
-    ASSERT_EQ(0, e.get_columns());
+    ASSERT_EQ(0, e.get_cols());
 }
 
 
 TEST(Matrix, Inverse) {
   Matrix<double> m(5, 5);
 
-  for (size_t i = 0; i < m.Rows(); ++i) {
-    for (size_t j = 0; j < m.Rows(); ++j) {
+  for (int i = 0; i < m.get_rows(); ++i) {
+    for (int j = 0; j < m.get_rows(); ++j) {
       m[i][j] = 1 + (i*j)%7;
-    }   
+    }
   }
 
   Matrix<double> I(5, 5);
-  for (size_t i = 0; i < m.Rows(); ++i) {
+  for (int i = 0; i < m.get_rows(); ++i) {
     I[i][i] = 1.;
   }
 
-  auto i = m.Inverse();
+  auto i = m.Inversion();
   EXPECT_EQ(I, i*m);
   EXPECT_EQ(I, m*i);
   EXPECT_EQ(m*i, i*m);
