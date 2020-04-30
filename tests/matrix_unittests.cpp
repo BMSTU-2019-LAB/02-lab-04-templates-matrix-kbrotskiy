@@ -1,5 +1,6 @@
-#include <gtest/gtest.h>
+// Copyright 2018 Your Name <your_email>
 
+#include <gtest/gtest.h>
 #include <matrix.hpp>
 
 TEST(Matrix, Init) {
