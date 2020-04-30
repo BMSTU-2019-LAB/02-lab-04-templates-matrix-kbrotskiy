@@ -50,6 +50,7 @@ int Matrix<T>::get_cols() const {
 template<class T>
 Matrix<T>::Matrix(int rows_m, int cols_m)
     {
+        
         rows = rows_m;
         cols = cols_m;
         matr = new T*[rows_m];
