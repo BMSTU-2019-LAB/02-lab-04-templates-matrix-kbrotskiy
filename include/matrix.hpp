@@ -240,4 +240,4 @@ Matrix<T> Matrix<T>::Inversion(){
  return invT;
 }
 
-#endif INCLUDE_MATRIX_HPP_
+#endif // INCLUDE_MATRIX_HPP_
