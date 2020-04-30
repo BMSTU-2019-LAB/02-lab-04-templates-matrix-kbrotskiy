@@ -1,4 +1,4 @@
-// Copyright 2018 Your Name <your_email>
+// Copyright 2020 Kirill brotskia_26@mail.ru
 
 #include <gtest/gtest.h>
 
