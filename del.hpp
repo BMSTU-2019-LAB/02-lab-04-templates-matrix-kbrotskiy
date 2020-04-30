@@ -1,8 +1,8 @@
 // Copyright 2018 Your Name <your_email>
 
-#ifndef del_hpp
+#ifndef DEL_HPP_
 #define del_hpp
 
 #include <stdio.h>
 
-#endif /* del_hpp */
+#endif  // DEL_HPP_
