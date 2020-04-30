@@ -1,9 +1,4 @@
-//
-//  del.hpp
-//  main
-//
-//  Created by Кирилл Броцкий on 23.04.2020.
-//
+// Copyright 2018 Your Name <your_email>
 
 #ifndef del_hpp
 #define del_hpp
